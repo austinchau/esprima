@@ -938,7 +938,6 @@ parseStatement: true, parseSourceElement: true */
                     case 't':
                         str += '\t';
                         break;
-                    case 'u':
                     case 'x':
                         restore = index;
                         unescaped = scanHexEscape(ch);
@@ -948,6 +947,9 @@ parseStatement: true, parseSourceElement: true */
                             index = restore;
                             str += ch;
                         }
+                        break;
+                    case 'u':
+                        str += '\\u';
                         break;
                     case 'b':
                         str += '\b';
@@ -4448,6 +4450,8 @@ parseStatement: true, parseSourceElement: true */
     exports.parse = parse;
 
     exports.modify = modify;
+
+    exports.traverse = traverse;
 
     exports.generate = generate;
 
