@@ -930,13 +930,13 @@ parseStatement: true, parseSourceElement: true */
                 if (!isLineTerminator(ch)) {
                     switch (ch) {
                     case 'n':
-                        str += '\n';
+                        str += '\\n';
                         break;
                     case 'r':
-                        str += '\r';
+                        str += '\\r';
                         break;
                     case 't':
-                        str += '\t';
+                        str += '\\t';
                         break;
                     case 'x':
                         restore = index;
@@ -952,13 +952,13 @@ parseStatement: true, parseSourceElement: true */
                         str += '\\u';
                         break;
                     case 'b':
-                        str += '\b';
+                        str += '\\b';
                         break;
                     case 'f':
-                        str += '\f';
+                        str += '\\f';
                         break;
                     case 'v':
-                        str += '\v';
+                        str += '\\v';
                         break;
 
                     default:
